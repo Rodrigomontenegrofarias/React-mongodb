@@ -1,14 +1,19 @@
 .app {
   padding: 10px;
+  text-align: center;
+
 }
 
 
 form {
   width: 50%;
+  text-align: center;
+  margin: 0 auto;
 }
 
 .form-input {
-  margin: 10px 0px;
+  margin:  0px;
+  margin: 0 auto;
 }
 
 .form-input input, .form-input textarea {
@@ -19,6 +24,7 @@ form {
   border: 1px solid lightgray;
   padding: .375rem .75rem;
   outline: none;
+  margin: 0 auto;
   
 }
 
@@ -31,11 +37,12 @@ button {
   border-radius: .25rem;
   cursor: pointer;
   outline: none;
+  margin: 0 auto;
 }
 
 .blog-post__display {
   border: 1px solid lightgrey;
-  margin: 5px 0px;
+  margin:  0 auto;
   border-radius: 4px;
   padding: 10px;
 }
