@@ -6,11 +6,11 @@ const path = require('path');
 
 const app = express();
 const PORT = process.env.PORT || 8080; // Step 1
-
+const MONGODB_URI  ='mongodb+srv://Montenegro:Rodrigojesus1001@cluster1.m8gzd.mongodb.net/test?authSource=admin&replicaSet=atlas-11sziz-shard-0&w=majority&readPreference=primary&appname=MongoDB%20Compass&retryWrites=true&ssl=true';
 const routes = require('./routes/api');
 
 // Step 2
-mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/mern_youtube', {
+mongoose.connect(MONGODB_URI || 'mongodb://localhost/mern_youtube', {
     useNewUrlParser: true,
     useUnifiedTopology: true
 });
