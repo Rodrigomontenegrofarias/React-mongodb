@@ -6,11 +6,11 @@ const path = require('path');
 
 const app = express();
 const PORT = process.env.PORT || 8080; // Step 1
-const MONGODB_URI  ='mongodb+srv://Montenegro:Rodrigojesus1001@cluster1.m8gzd.mongodb.net/test?authSource=admin&replicaSet=atlas-11sziz-shard-0&w=majority&readPreference=primary&appname=MongoDB%20Compass&retryWrites=true&ssl=true';
+//const MONGODB_URI  ='mongodb+srv://Montenegro:Rodrigojesus1001@cluster1.m8gzd.mongodb.net/test?authSource=admin&replicaSet=atlas-11sziz-shard-0&w=majority&readPreference=primary&appname=MongoDB%20Compass&retryWrites=true&ssl=true';
 const routes = require('./routes/api');
 
 // Step 2
-mongoose.connect(MONGODB_URI , {
+mongoose.connect(MONGODB_URI || 'mongodb://localhost/mern_youtube', {
     useNewUrlParser: true,
     useUnifiedTopology: true
 });
@@ -20,7 +20,7 @@ mongoose.connection.on('connected', () => {
 });
 
 // Data parsing
-
+app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
 // Step 3
@@ -31,7 +31,7 @@ if (process.env.NODE_ENV === 'production') {
 
 
 // HTTP request logger
-
+app.use(morgan('tiny'));
 app.use('/api', routes);
 
 
